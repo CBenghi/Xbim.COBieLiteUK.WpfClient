@@ -7,7 +7,7 @@
     <ProjectGuid>{C78ABF20-24BC-45EF-A3B9-F4AAF142C093}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Xbim.COBieLiteUK.WpfClient</RootNamespace>
+    <RootNamespace>Xbim.WpfClient</RootNamespace>
     <AssemblyName>Xbim.COBieLiteUK.WpfClient</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -158,6 +158,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="COBieLiteGeneratorDlg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="COBieLiteUkExportConfigurator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -165,6 +173,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="COBieLiteGeneratorDlg.xaml.cs">
+      <DependentUpon>COBieLiteGeneratorDlg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="COBieLiteUkExportConfigurator.xaml.cs">
+      <DependentUpon>COBieLiteUkExportConfigurator.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

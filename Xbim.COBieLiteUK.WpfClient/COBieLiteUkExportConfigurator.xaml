@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Xbim.WpfClient.COBieLiteUkExportConfigurator"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Background="Black"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <!-- START resources for checked list box -->
+        <ControlTemplate x:Key="ItemTemplate" TargetType="ListViewItem">
+            <Border
+		BorderThickness="{TemplateBinding Border.BorderThickness}"
+		Padding="{TemplateBinding Control.Padding}"
+		BorderBrush="{TemplateBinding Border.BorderBrush}"
+		Background="{TemplateBinding Panel.Background}"
+		SnapsToDevicePixels="True">
+                <ContentPresenter
+			Content="{TemplateBinding ContentControl.Content}"
+			ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}"
+			HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}"
+			VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}"
+			SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+            </Border>
+        </ControlTemplate>
+
+        <Style TargetType="ListViewItem">
+            <Setter Property="Template" Value="{StaticResource ItemTemplate}" />
+        </Style>
+
+        <DataTemplate x:Key="ItemDataTemplate">
+            <CheckBox
+			x:Name="checkbox"
+			Content="{Binding}"
+			IsChecked="{Binding	RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}, Path=IsSelected}" />
+        </DataTemplate>
+        <!-- END resources for checked list box -->
+    </UserControl.Resources>
+    <Grid>
+        <ListView 
+            Width="100" 
+            Height="100"
+			x:Name="checkedListSys"
+			SelectionMode="Multiple"
+			ItemsSource="{Binding}"
+			ItemTemplate="{StaticResource ItemDataTemplate}"
+			/>
+    </Grid>
+</UserControl>
