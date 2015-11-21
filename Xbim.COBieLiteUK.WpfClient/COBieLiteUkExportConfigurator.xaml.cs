@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using XbimExchanger.IfcToCOBieLiteUK;
 
 namespace Xbim.WpfClient
 {
@@ -28,7 +29,12 @@ namespace Xbim.WpfClient
 
         private void SetDataContext()
         {
-            var items = new ObservableCollection<string> {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5"};
+
+            var items = new ObservableCollection<SystemExtractionMode>
+            {
+                SystemExtractionMode.PropertyMaps,
+                SystemExtractionMode.Types
+            };
             DataContext = items;
         }
     }

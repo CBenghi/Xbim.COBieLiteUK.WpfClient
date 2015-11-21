@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             Background="Black"
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
         <!-- START resources for checked list box -->
@@ -36,14 +35,14 @@
         </DataTemplate>
         <!-- END resources for checked list box -->
     </UserControl.Resources>
-    <Grid>
-        <ListView 
-            Width="100" 
-            Height="100"
-			x:Name="checkedListSys"
-			SelectionMode="Multiple"
-			ItemsSource="{Binding}"
-			ItemTemplate="{StaticResource ItemDataTemplate}"
-			/>
+    <Grid Background="LightGray">
+        
+        <GroupBox Header="System sources:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="98" Width="150">
+            <ListView x:Name="checkedListSys"
+			    SelectionMode="Multiple" Margin="5"
+			    ItemsSource="{Binding}"
+			    ItemTemplate="{StaticResource ItemDataTemplate}" 
+			    />
+        </GroupBox>
     </Grid>
 </UserControl>
